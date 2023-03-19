@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Tic Tac Toe</title>
+  </head>
+  <body onload="setupEventHandler()" background="./wood.png">
+    <div id="upper">
+      <div id="left">
+        <div id="nameArea">
+          <button id="edit1">Edit</button>
+          <input id="name1" value="Player" type="text" readonly="yes" />
+        </div>
+        <div id="pInfo">
+          <p class="pWin" id="p1Win">Wins: 0</p>
+          <p class="pLoss" id="p1Loss">Losses: 0</p>
+          <p class="pDraw" id="p1Draw">Draws: 0</p>
+        </div>
+      </div>
+
+      <table id="main">
+        <tr>
+          <td id="00"></td>
+          <td id="01"></td>
+          <td id="02"></td>
+        </tr>
+        <tr>
+          <td id="10"></td>
+          <td id="11"></td>
+          <td id="12"></td>
+        </tr>
+        <tr>
+          <td id="20"></td>
+          <td id="21"></td>
+          <td id="22"></td>
+        </tr>
+      </table>
+
+      <div id="right">
+        <div id="nameArea">
+          <button id="edit2">Edit</button>
+          <input id="name2" type="text" readonly="yes" />
+        </div>
+        <div id="pInfo">
+          <p class="pWin" id="p2Win">Wins: 0</p>
+          <p class="pLoss" id="p2Loss">Losses: 0</p>
+          <p class="pDraw" id="p2Draw">Draws: 0</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <panel id="options">
+        <button id="reset" >Reset</button>
+        <button id="mode"> Player / AI</button>
+      </panel>
+    </div>
+  </body>
+</html>
