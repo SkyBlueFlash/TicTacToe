@@ -1,5 +1,5 @@
 // add an onclick event for each cell to register clicks and call playMove on the clicked cell
-// and onclick event for reset button
+// ,onclick event for reset button, and onclick event for edit/save button
 function setupEventHandler() {
   const cells = document.querySelectorAll("td");
   cells.forEach(function (cell) {
@@ -7,10 +7,15 @@ function setupEventHandler() {
       board.playMove(cell);
     };
   });
+
   board.render();
+
   const btn = document.getElementById("reset");
   btn.addEventListener('click',  board.reset);
 
+  // if button text is 'edit' make text box editable and change button name to save
+  // if button text is 'save' save the text box version in the player name variable
+  // and make text box readonly and revert button text to 'edit'
   const btn1 = document.getElementById("edit1");
   btn1.addEventListener('click',  function() {
     const pname = document.getElementById("name1");
@@ -24,7 +29,6 @@ function setupEventHandler() {
         player1.edit(pname.value);
 
     }
-  
   });
 
   const btn2 = document.getElementById("edit2");
@@ -44,7 +48,7 @@ function setupEventHandler() {
   });
 }
 
-// player object contains score and functions to set or get the scores
+// player object contains player data and functions to set or get the data
 const Player = (val) => {
   let name = val;
   let wins = 0;
@@ -153,7 +157,7 @@ let board = (() => {
       return values[1][1];
   }
 
-  // reset remaining moves and stored values for each table cell
+  // reset remaining moves and stored values for each table cell, and reset players score to zero
   function reset() {
     remainingMoves = 9;
     values = [
